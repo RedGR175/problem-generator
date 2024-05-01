@@ -1,4 +1,6 @@
 # problem-generator
-Can generate academic problems from a simple text prompt.
+This is a work in progress academic problem generator
 
-This is a commit
+It uses the OpenAI API
+
+At the moment it only works as a visual interface for the API
