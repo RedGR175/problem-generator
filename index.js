@@ -7,6 +7,8 @@ const fs = require('fs').promises;  // Use the promise-based version of 'fs'
 const app = express();
 const port = 3000;
 
+app.use(express.static(__dirname + '/public'))
+
 // Initialize the OpenAI client with your API key
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
