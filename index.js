@@ -25,6 +25,7 @@ app.get('/', (req, res) => {
 // Endpoint to handle questions
 app.post('/ask', async (req, res) => {
     try {
+        console.log('sending request');
         // Read the prompt from the text file
         const prompt = await fs.readFile('prompt.txt', 'utf8');
 
