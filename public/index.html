@@ -3,14 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat with AI</title>
+    <title>Generate Problems With AI</title>
     <script defer src="script.js"></script>
+    <link rel="stylesheet" href="styles.css">
+
 </head>
 <body>
-    <h1>AI Chat Interface</h1>
-    <input type="text" id="question" placeholder="Ask a question...">
-    <button onclick="askQuestion()">Ask</button>
-    <p id="answer"></p>
+
+    <main>
+        <h1>AI Problem Generator</h1>
+        <div class="description">
+            <p>This is an AI Problem Generator. It creates problems from a simple text prompt.</p>
+        </div>
+
+        <div id="problem-generator">
+            <div id="input-container">   
+           
+                <div class="option-box">
+
+                    <div class="input-box">
+                        <div class="description">
+                            <p>Prompt Input</p>
+                        </div>
+                        <div id="text-input-container">
+                            <input type="text" id="user-input">
+                        </div>
+                            
+                    </div>
+
+                    <div class="separator"></div>
+
+                    <div class="description">
+                        <p>Difficulty</p> 
+                    </div>
+                    <div class="selector-container difficulty">
+                        <button class="selector-button" id="Easy">Easy</button>
+                        <button class="selector-button" id="Medium">Medium</button>
+                        <button class="selector-button" id="Hard">Hard</button>
+                    </div>
+                    
+                    <div class="separator"></div>
+
+                    <div class="description">
+                        <p>Story Problem?</p>
+                    </div>
+
+                    <div class="selector-container story-problem">
+                        <button class="selector-button" id="Yes">Yes</button>
+                        <button class="selector-button" id="No">No</button>
+                    </div>
+
+                    <div class="separator"></div>
+
+                    
+                    <button onclick="submit()" id="submit-button">Generate</button>
+                    
+                </div>
+                    
+            </div>
+            <div id="output-container">
+                <p id="output">Output...</p>
+            
+            </div>
+        </div>  
+        
+    </main>
+    
+        
+    
+        
+
+    
 
 </body>
 </html>
