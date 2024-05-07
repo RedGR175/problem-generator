@@ -1,6 +1,7 @@
 const OpenAI = require('openai').default;
 const fs = require('fs').promises;
 
+//for replit: key = process.env.OPENAI_API_KEY
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY
 });
@@ -16,8 +17,8 @@ async function generateProblem(userInput) {
 
         const completion = await openai.chat.completions.create({
             messages: [
-                { "role": "system", "content": prompt },
-                { "role": "user", "content": userInput }
+                {"role": "system", "content": prompt},
+                {"role": "user", "content": userInput}
             ],
             model: "gpt-3.5-turbo",
             //response_format: { type: "json_object" }
