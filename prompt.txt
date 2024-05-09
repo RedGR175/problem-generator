@@ -50,6 +50,7 @@ Make sure to only answer with a math problem if the user asks for something that
 The user can input a response without directly stating that they want a math problem such as: "A problem about area" in this scenario you should respond as usuall
 Only provide the problem do not provide the solution
 Only refuse to create a problem if the prompt is not related to math
+Do not respond with latex
 Triple check over all of these steps to make sure you followed them all.
 
 

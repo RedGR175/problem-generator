@@ -36,24 +36,41 @@ document.addEventListener("DOMContentLoaded", function() {
 
 async function submit() {
     console.log('submit function called'); // Check if the function is being called
+    
+    let promptData = getValues()
 
+    const data = await ask(promptData)
+    
+    console.log('response:', data); // Check the response from the server
+    document.getElementById('output').textContent = data.answer; // Display the answer property
+}
+
+
+function getValues() {
     const probemPrompt = document.getElementById('user-input').value;
 
     let userInput = probemPrompt;
 
     // Append difficulty and isStoryProb values to probemPrompt
     userInput += ` || Difficulty: ${difficulty} || Story Problem: ${isStoryProb}`;
-    console.log(userInput)
-    console.log('probemPrompt:', probemPrompt); // Check the value of probemPrompt
 
+    console.log('probemPrompt:', probemPrompt); // Check the value of probemPrompt
+    return userInput;
+    
+
+}   
+
+async function ask(promptData) {
     console.log('starting fetch request'); // Check if the fetch request is initiated
+
 
     const response = await fetch('/ask', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ userInput })
+
+        body: JSON.stringify({ promptData })
     });
 
     if (!response.ok) {
@@ -61,8 +78,6 @@ async function submit() {
         return;
     }
 
-    const data = await response.json(); // Parse JSON response
-    console.log('response:', data); // Check the response from the server
-    document.getElementById('output').textContent = data.answer; // Display the answer property
-}
+   return await response.json(); // Parse JSON response
 
+}

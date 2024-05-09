@@ -26,7 +26,8 @@ app.post('/ask', async (req, res) => {
     console.log('request sent to index...')
 
     try {
-        const response = await generateProblem(req.body.userInput)
+        console.log(req.body.userInput)
+        const response = await generateProblem(req.body.promptData)
         res.json({ answer: response })
 
     } catch (error) {

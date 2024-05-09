@@ -34,17 +34,39 @@ main {
     justify-content: flex-start;
     min-width: 300px;
     align-items: center;
+    max-width: 300px;
 }
 
 #output-container {
     background-color: rgba(200, 200, 255, 0.2);
-    width: 100%;
+    width: 90%;
     padding: 20px;
     margin: 10px;
     border: 10px solid rgba(200, 200, 200, 0.25);
     border-radius: 10px;
-    align-content:start;
+    align-content: start;
 }
+
+/* Media Query for screens smaller than 768px */
+@media (max-width: 768px) {
+    #problem-generator {
+        flex-direction: column;
+        width: 100%; /* Adjust width to use the full device width */
+    }
+
+    #input-container, #output-container {
+        width: 90%; /* Make containers slightly narrower for better margins */
+        margin: 10px auto; /* Center align the containers */
+    }
+
+    main {
+        margin: 10px;
+    }
+
+}
+
+/* Additional styles... */
+
 
 .selector-container {
     background-color: transparent;
