@@ -21,10 +21,10 @@ async function generateProblem(userInput) {
                 {"role": "user", "content": userInput}
             ],
             model: "gpt-3.5-turbo",
-            //response_format: { type: "json_object" }
+            max_tokens: 100 
         });
         response = completion.choices[0].message.content
-        
+
         return response        
 
     } catch (error) {

@@ -26,7 +26,17 @@
                             <p>Prompt Input</p>
                         </div>
                         <div id="text-input-container">
-                            <input type="text" id="user-input">
+                            <textarea placeholder="Ex. Adding fractions" name="user-input" id="user-input" maxlength="100"></textarea>
+
+                            <script>
+                                const textInput = document.getElementById('user-input');
+                                function handleResize() {
+                                    this.style.height = 'auto'
+                                    this.style.height = `${this.scrollHeight}px`
+                                }
+                                textInput.addEventListener('input', handleResize)
+
+                            </script>
                         </div>
                             
                     </div>
@@ -68,12 +78,5 @@
         </div>  
         
     </main>
-    
-        
-    
-        
-
-    
-
 </body>
 </html>

@@ -36,12 +36,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 async function submit() {
     console.log('submit function called'); // Check if the function is being called
-    
+
+    document.getElementById('output').textContent = 'Generating...'
     let promptData = getValues()
 
     const data = await ask(promptData)
-    
+    console.log(data)
     console.log('response:', data); // Check the response from the server
+
     document.getElementById('output').textContent = data.answer; // Display the answer property
 }
 
@@ -56,7 +58,7 @@ function getValues() {
 
     console.log('probemPrompt:', probemPrompt); // Check the value of probemPrompt
     return userInput;
-    
+
 
 }   
 
@@ -75,6 +77,7 @@ async function ask(promptData) {
 
     if (!response.ok) {
         console.error('Request failed with status:', response.status);
+        document.getElementById('output').textContent = ('Request failed with status:', response.status);
         return;
     }
 

@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+    box-sizing: border-box; 
+}
 
 body, html {
     background-image: linear-gradient(to right, rgb(41, 132, 148), rgb(84, 173, 84));
@@ -35,6 +39,9 @@ main {
     min-width: 300px;
     align-items: center;
     max-width: 300px;
+    height: auto;
+    padding: 5px;
+    margin-bottom: 10px; 
 }
 
 #output-container {
@@ -47,16 +54,16 @@ main {
     align-content: start;
 }
 
-/* Media Query for screens smaller than 768px */
+
 @media (max-width: 768px) {
     #problem-generator {
         flex-direction: column;
-        width: 100%; /* Adjust width to use the full device width */
+        width: 100%; 
     }
 
     #input-container, #output-container {
-        width: 90%; /* Make containers slightly narrower for better margins */
-        margin: 10px auto; /* Center align the containers */
+        width: 90%; 
+        margin: 10px auto; 
     }
 
     main {
@@ -65,7 +72,7 @@ main {
 
 }
 
-/* Additional styles... */
+
 
 
 .selector-container {
@@ -80,14 +87,14 @@ main {
 }
 
 .selector-button {
-    border: 3px solid transparent; /* Set transparent border */
+    border: 3px solid transparent; 
     flex: 1;
     margin: 0px;
     border-radius: 25px;
     cursor: pointer;
     background: none;
     font-size: large;
-    padding: 10px; /* Fixed padding */
+    padding: 10px; 
     outline: none;
     transition: all 0.4s ease-in;
 }
@@ -117,7 +124,7 @@ main {
 
 #submit-button {
     background-color: transparent;
-    padding: 1px;
+    padding: 0px;
     height: 50px;
     border-radius: 30px;
     display: flex;
@@ -130,47 +137,54 @@ main {
     align-items: center;
     justify-content: center;
     font-size: larger;
-    margin-top: 10px;
-    transition: all 0.2s ease-in;
+    transition: all 0.2s;
+    margin-top: 15px;
     cursor: pointer;
 }
 
 #submit-button:hover {
-    background-color: rgba(175, 175, 175, 0.4);;
+    background-color: rgba(175, 175, 175, 0.4);
 }
 #submit-button:active {
-    background-color: rgba(165, 165, 165, 0.4);;
+    background-color: rgba(100, 100, 100, 0.6);
 }
 
 #text-input-container {
     background-color: transparent;
-    height: 30px;
+    min-height: 40px;
     border-radius: 30px;
     display: flex;
     justify-content: space-around;
-    align-content: center;
+    align-items: center; 
     border: 3px solid rgba(200, 200, 200, 0.25);
     background-color: rgba(200, 200, 200, 0.4);;
     max-width: 240px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: larger;
     margin-bottom: 10px;
     padding: 5px;
+    overflow: hidden;
 }
 
-#text-input-container input {
+
+#text-input-container textarea {
     background: transparent;
     border: none;
     width: 90%;
-    height: 100%;
     font-size: large;
     outline: none;
+    scrollbar-width: none;
+    margin: auto;
+    resize: none; 
 }
+
 
 
 .description {
     font-weight: bold;
-    bottom:3px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+h1 {
+    margin-bottom: 0px;
+    padding: 0px;
 }
